@@ -2,5 +2,5 @@
 
 
 
-[Graph Neural Networks: Foundations, Frontiers, Applications](https://github.com/paoxiaode/paper_read/blob/main/Graph Neural Networks Foundations%2C Frontiers%2C Applications/GNN learn.md)
+[Graph Neural Networks: Foundations, Frontiers, Applications](Graph_Neural_Networks_Foundations_Frontiers_Applications/GNN_learn.md)
 
