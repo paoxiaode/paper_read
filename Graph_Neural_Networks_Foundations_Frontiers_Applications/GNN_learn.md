@@ -4,9 +4,7 @@
 
 ## Graph Generation & Transformation
 
-### Graph Generation
-
-Application:
+### Graph Generation Application
 
 ![image-20220920110245376](./assets/image-20220920110245376.png)
 
@@ -87,3 +85,51 @@ TGN network arch
 -  Node addition and removal are still challenges.
 -  Inverse problem of graph dynamics
 -  Spatiotemporal
+
+## Graph Matching
+
+### Graph Matching Application
+
+* Graph similar searching in graph based database
+* 3D Action Recognition
+* Unknown malware(恶意代码) detection 
+
+### Problem Formulation
+
+There are two kinds of graph matching formulation
+
+#### Node Correspondence
+
+![image-20221008101601871](./assets/image-20221008101601871.png)
+
+Find a node-to-node correspondence matrix between two graphs.
+
+* NP-hard
+* Computationally expensive and Poor scalability
+
+#### Similarity Learning
+
+![image-20221008101853639](./assets/image-20221008101853639.png)
+
+Produce a similarity score between two graphs
+
+* NP-hard
+* GNN-based methods demonstrating superiority over traditional methods
+
+Input: a pair of graph inputs $(G^1,G^2)$
+
+* $G^1=(V^1,E^1)$ with $(X^1,A^1)$, where $X^1\in R^{N*d},A^1\in R^{N*N}$
+* $G^2=(V^2,E^2)$ with $(X^2,A^2)$, where $X^2\in R^{N*d},A^2\in R^{N*N}$
+
+Output
+
+* $Y=\{-1,1\}$: graph-graph classification task
+* $Y=[0,1]$: graph-graph regression task
+
+
+
+GraphSim: 
+
+* 节点间的顺序是怎么确定的？
+
+* 在得到相似度矩阵后怎么操作？类似于CNN(卷积、池化啥的)
