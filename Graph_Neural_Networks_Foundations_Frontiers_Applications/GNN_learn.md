@@ -111,7 +111,9 @@ Find a node-to-node correspondence matrix between two graphs.
 
 ![image-20221008101853639](./assets/image-20221008101853639.png)
 
-Produce a similarity score between two graphs
+Produce a similarity score between two graphs, usually use **GED (Graph edit distance) and MCS (Most common subgraph)**
+
+<img src="assets/image-20221012100159991.png" alt="image-20221012100159991" style="zoom: 80%;" />
 
 * NP-hard
 * GNN-based methods demonstrating superiority over traditional methods
@@ -126,10 +128,39 @@ Output
 * $Y=\{-1,1\}$: graph-graph classification task
 * $Y=[0,1]$: graph-graph regression task
 
+## Graph Similarity Learning methods
 
+### Convolutional  Set Matching
 
-GraphSim: 
+GraphSim(Bai et al, 2020b): 
 
-* 节点间的顺序是怎么确定的？
+<img src="assets/image-20221012100433275.png" alt="image-20221012100433275" style="zoom:67%;" />
+
+* 节点间的顺序是怎么确定的？BFS
 
 * 在得到相似度矩阵后怎么操作？类似于CNN(卷积、池化啥的)
+
+### Hierarchical clustering
+
+![image-20221012095059123](assets/image-20221012095059123.png)
+
+Hierarchical graph matching network (HGMN) (Xiu et al, 2020)
+
+Motivation:  two similar graphs should also be similar when they are compressed into more compact graphs.
+
+**HGMN fundamental difference:**
+
+* Use multiple stages of spectral clustering to create a multi-scale view of the similarity between graphs
+* Align the nodes in the two graphs using the earth mover distance and computes correlation matrix in the aligned order.
+
+### Graph-Bert
+
+GB-DISTANCE (Zhang, 2020)
+
+![image-20221012105326843](assets/image-20221012105326843.png)
+
+每次需要输入所有的input graph？
+
+### Cross-graph  Matching
+
+Graph Matching Networks (GMN) (Li et al, 2020)
